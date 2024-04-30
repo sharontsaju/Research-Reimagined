@@ -1,0 +1,41 @@
+.features {
+    padding: 40px;
+    background-color: #f9f9f9;
+  }
+  
+  .feature-box {
+    margin-bottom: 40px;
+  }
+  
+  .feature-title {
+    margin-bottom: 24px;
+  }
+  
+  .feature-description {
+    font-size: 20px;
+  }
+  
+  .feature-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .feature-step {
+    text-align: center;
+    margin-right: 20px;
+  }
+  
+  .feature-step-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .feature-step-description {
+    margin-bottom: 8px;
+  }
+  
+  .feature-step-details {
+    margin-bottom: 12px;
+  }
+  
