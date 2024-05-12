@@ -1,31 +1,35 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CustomNavbar from './Components/navbar/Navbar';
-import CustomButton from './Components/button/Button';
-import TextContent from './Components/TextContent/TextContent';
-// import Features from './Components/Features/Features'; // Import the Features component
-import About from './Components/About/About'
+import React, { useState } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import LoginForm from './Components/login/login';
+import Landing from './Components/Landing/Landing';
+import About from './Components/About/About';
+import CustomNavbar from './Components/navbar/Navbar'; // Import the CustomNavbar component
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
-    <body style={{ 
-      backgroundColor: 'black', 
-      color: 'white',
-      minHeight: '100vh', // Ensure content stretches to at least the height of the viewport
-      overflowX: 'hidden', // Hide horizontal scrollbar caused by the gradient
-      position: 'relative', // Set position relative to enable absolute positioning of the gradient
-    }}>
-      <CustomNavbar />
-      <TextContent /> {/* Keep the TextContent component if needed */}
-      
-      <div className="mt-4 d-flex justify-content-center"> {/* Center align and add spacing between buttons */}
-        <CustomButton text="PDF" />
-        <CustomButton text="URL" />
-        <CustomButton text="TEXT" />
-     
-      </div>
-        
-    </body>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            {/* Always render Navbar */}
+            {isLoggedIn ? <Navigate to="/home" /> : <LoginForm onLoginSuccess={handleLoginSuccess} />} {/* Render LoginForm only when not logged in */}
+          </>
+        }
+      />
+      <Route path="/home" element={isLoggedIn ? <Landing /> : <Navigate to="/" />} />
+      <Route path="/about-us" element={<About />} />
+    </Routes>
   );
 }
 

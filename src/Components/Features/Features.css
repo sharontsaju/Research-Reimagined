@@ -1,41 +1,14 @@
-.features {
-    padding: 40px;
-    background-color: #f9f9f9;
-  }
-  
-  .feature-box {
-    margin-bottom: 40px;
-  }
-  
-  .feature-title {
-    margin-bottom: 24px;
-  }
-  
-  .feature-description {
-    font-size: 20px;
-  }
-  
-  .feature-steps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .feature-step {
-    text-align: center;
-    margin-right: 20px;
-  }
-  
-  .feature-step-image {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .feature-step-description {
-    margin-bottom: 8px;
-  }
-  
-  .feature-step-details {
-    margin-bottom: 12px;
-  }
-  
+/* Features.css */
+.feature-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+.container-border {
+  border: 1px solid white;
+  padding: 35px; /* Adjust the padding value as needed */
+}
