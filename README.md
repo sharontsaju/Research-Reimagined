@@ -5,7 +5,7 @@ This website is designed to make it easier for researchers and students to under
 ## Features
 
 ### Automated Text Mining
-Utilizes the TF-IDF algorithm to extract relevant text segments from scientific papers.
+Utilizes the TF-IDF (Term Frequency inverse Document Frequency) algorithm to extract relevant text segments from scientific papers.
 
 ### Summary Generation
 Employs the BART (Bidirectional and Auto-Regressive Transformers) model to generate comprehensive summaries from the mined text segments.
