@@ -1,4 +1,4 @@
-# Research Reimagined: Scientific Paper Summarizer and Research Assist
+# Research Reimagined
 
 This website is designed to make it easier for researchers and students to understand and work with scientific articles and research papers. At present, the tool supports non-mathematical papers from Springer, with plans to expand its coverage and capabilities in future updates. Contributions are highly encouraged to help develop a more student and research-friendly application.
 
