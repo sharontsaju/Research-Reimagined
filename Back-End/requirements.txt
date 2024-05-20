@@ -1,0 +1,10 @@
+transformers
+python-pptx
+pymupdf
+fitz
+spacy
+flask
+scispacy
+nmslib
+Flask
+Flask-CORS
