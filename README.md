@@ -29,7 +29,7 @@ Incorporates the Realistic Text to Speech API by VidLab to convert text summarie
     ```
 3. Run the React website.
     ```sh
-    cd Frontend
+    cd Front-End
     npm start
     ```
 
@@ -46,7 +46,7 @@ View the generated summary, PowerPoint presentation (`summary.pptx`) containing 
 
 - **Jafar N**
 - **Sharon T Saju**
-- **Sreedev TS** (xreedev@gmail.com)
+- **Sreedev TS** 
 
 ## Module Design
 
