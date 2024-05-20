@@ -29,7 +29,7 @@ const FeatureCard = ({ title, description }) => {
     <Col>
       <Card className="feature-card">
         <Card.Body>
-          <Card.Title>{title}</Card.Title>
+          <Card.Title style={{ fontWeight: 'bold' }}>{title}</Card.Title> {/* Adjust font weight here */}
           <Card.Text>{description}</Card.Text>
         </Card.Body>
       </Card>
@@ -38,3 +38,4 @@ const FeatureCard = ({ title, description }) => {
 }
 
 export default Features;
+

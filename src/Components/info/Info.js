@@ -23,7 +23,6 @@ function Info() {
           <ul style={{ listStyleType: 'none', padding: 0 }}>
             <li><a href="#" className="link-no-decoration">Privacy Policy</a></li>
             <li><a href="#" className="link-no-decoration">Terms of Service</a></li>
-            <li><a href="#" className="link-no-decoration">Log In</a></li>
           </ul>
         </div>
       </div>

@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './TextContent.css'; // Import custom CSS file
+import { Link } from 'react-router-dom';
 
 function TextContent() {
   return (
@@ -11,7 +12,8 @@ function TextContent() {
         <Col>
           <h1 className='header-content'>Welcome to Research Reimagined</h1>
           <p className="lead">Discover innovative solutions for your research needs.</p>
-          <p>Learn more about us <a href="#about-us">here</a>.</p>
+          {/* <p>Learn more about us <a href="#about-us">here</a>.</p> */}
+          <p>Learn more about us <Link to="/about-us">here</Link>.</p>
         </Col>
       </Row>
       <Row>

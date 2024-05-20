@@ -15,7 +15,7 @@ function CustomNavbar({ textColor, bgColor }) {
   };
 
   return (
-    <Navbar style={{ backgroundColor: bgColor }} variant="dark" className="custom-navbar" expand="lg" fixed="top">
+    <Navbar style={{ backgroundColor: bgColor, borderBottom: 'none' }} variant="dark" className="custom-navbar" expand="lg" fixed="top">
       <Container fluid>
         <Navbar.Brand as={Link} to="/" href="#home" style={{ color: textColor }}>Research Reimagined</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

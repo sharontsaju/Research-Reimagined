@@ -1,5 +1,5 @@
-// login.js
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import './login.css';
 
 const LoginForm = ({ onLoginSuccess }) => {
@@ -7,6 +7,12 @@ const LoginForm = ({ onLoginSuccess }) => {
   const [password, setPassword] = useState('');
   const [emailErrorMsg, setEmailErrorMsg] = useState('');
   const [passwordErrorMsg, setPasswordErrorMsg] = useState('');
+  const emailInputRef = useRef(null); // Create a ref for the email input
+
+  useEffect(() => {
+    // Focus on the email input when the component mounts
+    emailInputRef.current.focus();
+  }, []); // Empty dependency array to run the effect only once
 
   const handleLogin = (event) => {
     event.preventDefault(); // Prevent form submission
@@ -37,11 +43,24 @@ const LoginForm = ({ onLoginSuccess }) => {
       <form id="loginForm" onSubmit={handleLogin}>
         <h1>Login</h1>
         <div className="input-box">
-          <input type="text" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input
+            type="text"
+            placeholder="Email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            ref={emailInputRef} // Set ref to the email input
+          />
           <i className='bx bx-envelope'></i>
         </div>
         <div className="input-box">
-          <input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <i className='bx bxs-lock-alt'></i>
         </div>
         <div className="remember-forgot">
@@ -54,6 +73,7 @@ const LoginForm = ({ onLoginSuccess }) => {
         <button type="submit" className="btn">Login</button>
         <div className="register-link" id="emailerrormsg">{emailErrorMsg}</div>
         <div className="register-link" id="pswderrorMsg">{passwordErrorMsg}</div>
+        <div className="register-link">Don't Have An Account? <Link to="/signup">Sign up</Link></div> {/* Use Link */}
       </form>
     </div>
   );

@@ -35,7 +35,7 @@ const About = () => {
 
   return (
     <>
-      <CustomNavbar textColor="white" bgColor="transparent" />{/* Pass the background color and text color as props */}
+      <CustomNavbar textColor="white" bgColor="black" />{/* Pass the background color and text color as props */}
       <div className="about-bg" style={{ backgroundImage: `url(${Aboutbg})`, backgroundSize: 'cover' }}> {/* Use a custom class for the background */}
         <Container fluid style={{ background: 'none' }}>
           <Row className="justify-content-center">

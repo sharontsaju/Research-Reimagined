@@ -4,6 +4,7 @@ import LoginForm from './Components/login/login';
 import Landing from './Components/Landing/Landing';
 import About from './Components/About/About';
 import CustomNavbar from './Components/navbar/Navbar'; // Import the CustomNavbar component
+import Signup from './Components/Signup/Signup';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,6 +30,7 @@ function App() {
       />
       <Route path="/home" element={isLoggedIn ? <Landing /> : <Navigate to="/" />} />
       <Route path="/about-us" element={<About />} />
+      <Route path="/signup" element={<Signup />} /> {/* Route for the signup page */}//this is additional
     </Routes>
   );
 }

@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CustomNavbar from '../navbar/Navbar';
+import TextInput from '../text/TextInput'; // Import the TextInput component
+import TextOutput from '../output/textoutput/textoutput'; // Import the TextOutput component
+import { Container, Row, Col } from 'react-bootstrap';
+import landing3 from '../images/landing3.jpg'; // Import the new background image
+import './Landing.css';
 import CustomButton from '../button/Button';
 import TextContent from '../TextContent/TextContent';
 import Features from '../Features/Features';
 import Footer from '..//footer/Footer';
 import Info from '../info/Info';
-import TextInput from '../text/TextInput';
 import PDFInput from '../pdf/PDFInput';
 import URLInput from '../url/URLInput';
-import { Container, Row, Col } from 'react-bootstrap';
-import landing3 from '../images/landing3.jpg'; // Import the new background image
-import './Landing.css';
 
 const Landing = () => {
   const [activeComponent, setActiveComponent] = useState(null);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const [showTextOutput, setShowTextOutput] = useState(false); // State for showing text output
+  const [summarizedText, setSummarizedText] = useState(''); // State for summarized text
 
   const handlePDFClick = (componentName) => {
     setActiveComponent(componentName);
@@ -32,6 +35,12 @@ const Landing = () => {
     setIsButtonClicked(false);
   };
 
+  const handleTextSubmit = (inputText) => {
+    // Handle text submission logic here
+    setSummarizedText(inputText);
+    setShowTextOutput(true);
+  };
+
   const renderComponent = () => {
     switch (activeComponent) {
       case 'PDF':
@@ -39,7 +48,7 @@ const Landing = () => {
         return (
           <Container fluid>
             <Row className="justify-content-center">
-              <Col xs={12} md={8} lg={6} style={{ marginTop: '20px', marginBottom: '30px' }}>
+              <Col xs={12} md={8} lg={6} style={{ marginTop: '20px', marginBottom: '60px' }}>
                 {activeComponent === 'PDF' && <PDFInput />}
                 {activeComponent === 'URL' && <URLInput />}
               </Col>
@@ -55,8 +64,12 @@ const Landing = () => {
         return (
           <Container fluid>
             <Row className="justify-content-center">
-              <Col xs={12} md={8} lg={6} style={{ marginTop: '20px', marginBottom: '30px' }}>
-                <TextInput />
+              <Col xs={12} md={8} lg={6} style={{ marginTop: '20px', marginBottom: '55px' }}>
+                {!showTextOutput ? (
+                  <TextInput onSubmit={handleTextSubmit} />
+                ) : (
+                  <TextOutput summarizedText={summarizedText} />
+                )}
               </Col>
             </Row>
             <hr style={{ border: 'none', borderBottom: '1px solid white', width: '100%' }} />
