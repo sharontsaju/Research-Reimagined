@@ -7,7 +7,7 @@ This website is designed to make it easier for researchers and students to under
 ### Automated Text Mining
 Utilizes the TF-IDF algorithm to extract relevant text segments from scientific papers.
 
-### Content Generation
+### Summary Generation
 Employs the BART (Bidirectional and Auto-Regressive Transformers) model to generate comprehensive summaries from the mined text segments.
 
 ### PowerPoint Presentation
